@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Send, Mail, Github, Linkedin, Phone } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -7,11 +8,19 @@ const Contact: React.FC = () => {
     email: '',
     message: ''
   });
+  const form = useRef();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+
+  emailjs.sendForm('service_foc17ys', 'template_43ugm59', form.current, 'zRCrK_iDD8ijqiR_U')
+    .then(() => {
+        alert('Message sent successfully!');
+    }, (error) => {
+        alert('Failed to send message. ' + error);
+    });
+
+
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -51,7 +60,7 @@ const Contact: React.FC = () => {
               </a>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6 mb-8">
+            <form className="space-y-6 mb-8" ref={form} onSubmit={handleSubmit} id="contactForm">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Name

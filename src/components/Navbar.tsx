@@ -53,13 +53,13 @@ const Navbar: React.FC<NavbarProps> = ({
             ))}
           </ul>
 
-          <button 
+          {/* <button 
             onClick={toggleDarkMode}
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
             aria-label="Toggle dark mode"
           >
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+          </button> */}
 
           <a 
             href="/ahmed-cv.pdf" 
