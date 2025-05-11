@@ -10,18 +10,18 @@ const Hero: React.FC = () => {
             Ahmed Khaled
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Senior Frontend Developer
+            Senior Frontend Engineer
           </p>
-          <div className="flex gap-4">
-            <a 
-              href="/ahmed-cv.pdf" 
-              download
-              className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+          <div className="flex gap-4 flex-col sm:flex-row">
+            <a
+              href="/ahmed-khaled-resume.pdf"
+              download="ahmed-khaled-resume.pdf"
+              className="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors duration-200 text-sm font-medium"
             >
-              <Download className="w-5 h-5 mr-2" />
+              <Download size={16} className="mr-2" />
               Download CV
             </a>
-            <a 
+            <a
               href="#contact"
               className="flex items-center px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
             >
